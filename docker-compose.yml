@@ -1,0 +1,40 @@
+version: '3.8'
+
+services:
+  app:
+    container_name: nest_app
+    build: .
+    ports:
+      - "3000:3000"
+    environment:
+      DATABASE_HOST: db
+      DATABASE_PORT: 5432
+      DATABASE_USER: postgres
+      DATABASE_PASSWORD: postgres
+      DATABASE_NAME: app_test
+    volumes:
+      - ./src:/app/src
+    networks:
+      - app_test
+    depends_on:
+      - db
+
+  db:
+    container_name: postgres_db
+    image: postgres:16.3-alpine3.20
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: app_test
+    volumes:
+      - app_test_postgres:/var/lib/postgresql/data
+    networks:
+      - app_test
+
+volumes:
+  app_test_postgres:
+
+networks:
+  app_test:
