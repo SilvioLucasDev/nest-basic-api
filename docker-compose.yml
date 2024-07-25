@@ -7,13 +7,14 @@ services:
     ports:
       - "3000:3000"
     environment:
-      DATABASE_HOST: db
-      DATABASE_PORT: 5432
-      DATABASE_USER: postgres
-      DATABASE_PASSWORD: postgres
-      DATABASE_NAME: app_test
+      DATABASE_HOST: ${DATABASE_HOST}
+      DATABASE_PORT: ${DATABASE_PORT}
+      DATABASE_USER: ${DATABASE_USER}
+      DATABASE_PASSWORD: ${DATABASE_PASSWORD}
+      DATABASE_NAME: ${DATABASE_NAME}
     volumes:
-      - ./src:/app/src
+      - .:/app
+      - /app/node_modules
     networks:
       - app_test
     depends_on:
@@ -35,6 +36,7 @@ services:
 
 volumes:
   app_test_postgres:
+
 
 networks:
   app_test:
