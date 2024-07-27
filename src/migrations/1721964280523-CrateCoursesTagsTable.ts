@@ -44,7 +44,7 @@ export class CrateCoursesTagsTable1721964280523 implements MigrationInterface {
       'courses_tags_tags',
       new TableForeignKey({
         name: 'courses_tags_courses_fk',
-        columnNames: ['course_id'],
+        columnNames: ['courseId'],
         referencedColumnNames: ['id'],
         referencedTableName: 'courses',
         onDelete: 'CASCADE',
@@ -55,7 +55,7 @@ export class CrateCoursesTagsTable1721964280523 implements MigrationInterface {
       'courses_tags_tags',
       new TableForeignKey({
         name: 'courses_tags_tags_fk',
-        columnNames: ['tag_id'],
+        columnNames: ['tagId'],
         referencedColumnNames: ['id'],
         referencedTableName: 'tags',
         onDelete: 'CASCADE',
