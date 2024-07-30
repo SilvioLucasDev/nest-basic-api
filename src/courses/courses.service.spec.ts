@@ -20,15 +20,15 @@ describe('CoursesService unit test', () => {
     expectOutputTags = [
       {
         id,
-        name: 'tag',
+        name: 'Any Tag',
         created_at,
       },
     ];
 
     expectOutputCourses = {
       id,
-      title: 'course',
-      description: 'description',
+      title: 'Any Course',
+      description: 'Any Description',
       created_at,
       tags: expectOutputTags,
     };
@@ -59,9 +59,9 @@ describe('CoursesService unit test', () => {
 
   it('should create a course', async () => {
     const createCourseDto: CreateCourseDto = {
-      title: 'course',
-      description: 'description',
-      tags: ['tag'],
+      title: 'Any Course',
+      description: 'Any Description',
+      tags: ['Any Tag'],
     };
 
     const newCourse = await service.create(createCourseDto);
@@ -88,9 +88,9 @@ describe('CoursesService unit test', () => {
 
   it('should update a course', async () => {
     const updateCourseDto: UpdateCourseDto = {
-      title: 'course',
-      description: 'description',
-      tags: ['tag'],
+      title: 'Any Course',
+      description: 'Any Description',
+      tags: ['Any Tag'],
     };
 
     const updatedCourse = await service.update(id, updateCourseDto);
