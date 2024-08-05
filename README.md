@@ -1,3 +1,3 @@
 # nest-basic-api
 
-API básica em NestJs para estudos.
+API simples em Node com NestJs para estudos
